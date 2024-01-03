@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "peony.jpeg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
