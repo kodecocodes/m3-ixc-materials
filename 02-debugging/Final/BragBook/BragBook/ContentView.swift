@@ -48,12 +48,12 @@ struct ContentView: View {
       Text("Dogs")
         .font(.largeTitle)
       HStack {
-        Button( "", systemImage: "chevron.left", action: {
+        Button("", systemImage: "chevron.left", action: {
           var backwardsIndex = currentIndex - 1
           if backwardsIndex < 0 {
             backwardsIndex = maxIndex
           }
-          self.currentIndex = backwardsIndex
+          currentIndex = backwardsIndex
         })
         Spacer()
         Button("", systemImage: "chevron.right", action: {
@@ -61,7 +61,7 @@ struct ContentView: View {
           if forwardIndex > maxIndex {
             forwardIndex = 0
           }
-          self.currentIndex = forwardIndex
+          currentIndex = forwardIndex
         })
       }
       Image(dogImages[currentIndex])
