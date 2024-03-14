@@ -33,36 +33,38 @@
 import SwiftUI
 
 struct ContentView: View {
-  @State var dogImages = ["corgi",
-                          "costa-rica",
-                          "daytsuk",
-                          "jack-russel",
-                          "mattie",
-                          "ruth"]
-  @State var currentIndex = 0  //the index of the current image
-  
-  let maxIndex = 5 //the number of images - 1
+  @State var dogImages = [
+    "corgi",
+    "costa-rica",
+    "daytsuk",
+    "jack-russel",
+    "mattie",
+    "ruth"
+  ]
+  @State var currentIndex = 0  // the index of the current image
+
+  let maxIndex = 5 // the number of images - 1
 
   var body: some View {
     VStack {
       Text("Dogs")
         .font(.largeTitle)
       HStack {
-        Button("", systemImage: "chevron.left", action: {
+        Button("", systemImage: "chevron.left") {
           var backwardsIndex = currentIndex - 1
           if backwardsIndex < 0 {
             backwardsIndex = maxIndex
           }
           currentIndex = backwardsIndex
-        })
+        }
         Spacer()
-        Button("", systemImage: "chevron.right", action: {
+        Button("", systemImage: "chevron.right") {
           var forwardIndex = currentIndex + 1
           if forwardIndex > maxIndex {
             forwardIndex = 0
           }
           currentIndex = forwardIndex
-        })
+        }
       }
       Image(dogImages[currentIndex])
         .resizable()
